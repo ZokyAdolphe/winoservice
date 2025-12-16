@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Garage automobile spécialisé en diagnostic, reprogrammation ECU, anti-démarrage à Antananarivo. Intervention rapide et conforme. Prenez RDV sur WhatsApp.">
+
+    <title>WINO Service - Expert Diagnostic & Reprogrammation Auto Madagascar - DEMO</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 header-shadow" x-data="{ mobileMenuOpen: false }">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-orange-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">W</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">WINO Service</h1>
+                        <p class="text-xs text-gray-500">Expert Auto</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="text-cyan-600 font-semibold transition-colors">Accueil</a>
+                    <a href="#services" class="text-gray-700 hover:text-cyan-600 transition-colors">Services</a>
+                    <a href="#rendez-vous" class="text-gray-700 hover:text-cyan-600 transition-colors">Rendez-vous</a>
+                    <a href="#contact" class="text-gray-700 hover:text-cyan-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <a href="#rendez-vous"
+                    class="hidden md:inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-orange-500 text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all">
+                    📅 Prendre RDV
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                class="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#accueil" class="text-cyan-600 font-semibold py-2">Accueil</a>
+                    <a href="#services" class="text-gray-700 py-2">Services</a>
+                    <a href="#rendez-vous" class="text-gray-700 py-2">Rendez-vous</a>
+                    <a href="#contact" class="text-gray-700 py-2">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil"
+        class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0"
+                style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
+                <div
+                    class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-sm font-medium">Disponible maintenant</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Votre Expert en Diagnostic & Reprogrammation Automobile
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                    Diagnostic, reprogrammation ECU, anti-démarrage et solutions électroniques automobiles à
+                    Antananarivo
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/261383408846?text=Bonjour%20WINO%20Service%2C%20je%20souhaite%20prendre%20rendez-vous"
+                        target="_blank"
+                        class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                        <span class="mr-2">💬</span>
+                        RDV sur WhatsApp
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=61578917654389" target="_blank"
+                        class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                        <span class="mr-2">📘</span>
+                        Contacter sur Facebook
+                    </a>
+                </div>
+
+                <div class="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-400">
+                    <div class="flex items-center space-x-2">
+                        <span>✅</span>
+                        <span>Expertise certifiée</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span>✅</span>
+                        <span>Intervention rapide</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span>✅</span>
+                        <span>Garantie incluse</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Nos <span class="gradient-text">Services Professionnels</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Solutions complètes pour tous vos besoins en électronique automobile
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Diagnostic Approfondi</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Analyse complète des systèmes électroniques de votre véhicule
+                        avec équipements professionnels de dernière génération.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reprogrammation ECU</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Optimisation et reprogrammation du calculateur moteur pour
+                        améliorer les performances et la consommation.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">🔐</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Anti-démarrage Moteur</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Intervention sur les systèmes anti-démarrage moteur pour
+                        résoudre les problèmes de démarrage.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Suppression Capteur</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Intervention technique sur capteurs défectueux avec respect
+                        des normes en vigueur.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">🔑</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Anti-démarrage Clé</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Programmation et réparation des systèmes anti-démarrage liés
+                        aux clés électroniques.</p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reprogrammation Clé</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Programmation de nouvelles clés ou reprogrammation de clés
+                        existantes pour votre véhicule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="rendez-vous" class="py-16 bg-gradient-to-br from-cyan-600 to-orange-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Besoin d'aide pour votre véhicule ?</h2>
+            <p class="text-xl mb-8 text-white/90">Contactez-nous maintenant pour un diagnostic rapide</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/261383408846?text=Bonjour%20WINO%20Service%2C%20j'ai%20besoin%20d'aide"
+                    target="_blank"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-cyan-600 font-semibold rounded-lg hover:bg-gray-100 shadow-lg transform hover:scale-105 transition-all">
+                    💬 Écrire sur WhatsApp
+                </a>
+
+                <a href="#rendez-vous"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-cyan-600 shadow-lg transform hover:scale-105 transition-all">
+                    📅 Prendre rendez-vous
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Nous <span class="gradient-text">Contacter</span>
+                </h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">📍</span>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Adresse</h3>
+                        <p class="text-gray-600 text-sm">Antananarivo, Madagascar</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">📞</span>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Téléphone</h3>
+                        <a href="tel:+261383408846" class="text-cyan-600 hover:text-cyan-700 text-sm">+261 38 34 088
+                            46</a>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl">🕒</span>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2">Horaires</h3>
+                        <p class="text-gray-600 text-sm">Lun-Ven: 8h-17h<br>Sam: 8h-12h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-6">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-cyan-500 to-orange-500 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold">W</span>
+                </div>
+                <h3 class="text-white font-bold text-lg">WINO Service</h3>
+            </div>
+            <p class="text-sm text-gray-400 mb-6">Votre Expert en Diagnostic & Reprogrammation Automobile</p>
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="https://wa.me/261383408846" target="_blank"
+                    class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                    <span class="text-white text-xl">💬</span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61578917654389" target="_blank"
+                    class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                    <span class="text-white text-xl">f</span>
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2025 WINO Service. Tous droits réservés.</p>
+            <p class="text-sm text-gray-600 mt-2">Conçu avec ❤️ pour l'excellence automobile</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom Bar (Mobile Only) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg md:hidden z-40">
+        <div class="grid grid-cols-3 divide-x divide-gray-200">
+            <a href="https://wa.me/261383408846?text=Bonjour%20WINO%20Service%2C%20j'ai%20besoin%20d'informations"
+                target="_blank"
+                class="flex flex-col items-center justify-center py-3 hover:bg-green-50 transition-colors">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mb-1">
+                    <span class="text-white text-xl">💬</span>
+                </div>
+                <span class="text-xs font-medium text-gray-700">WhatsApp</span>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61578917654389" target="_blank"
+                class="flex flex-col items-center justify-center py-3 hover:bg-blue-50 transition-colors">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mb-1">
+                    <span class="text-white text-xl">f</span>
+                </div>
+                <span class="text-xs font-medium text-gray-700">Facebook</span>
+            </a>
+
+            <a href="tel:+261383408846"
+                class="flex flex-col items-center justify-center py-3 hover:bg-orange-50 transition-colors">
+                <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mb-1">
+                    <span class="text-white text-xl">📞</span>
+                </div>
+                <span class="text-xs font-medium text-gray-700">Appeler</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/261383408846?text=Bonjour%20WINO%20Service%2C%20j'ai%20besoin%20d'aide" target="_blank"
+        class="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-50 group">
+        <div class="relative">
+            <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            <div
+                class="relative w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300">
+                <span class="text-white text-3xl">💬</span>
+            </div>
+        </div>
+    </a>
+
+</body>
+
+</html>
