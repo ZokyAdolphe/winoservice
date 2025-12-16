@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.winoservice.com/sitemap.xml
+
+# Disallow admin areas (if any in future)
+Disallow: /config/
